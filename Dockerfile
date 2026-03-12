@@ -1,7 +1,7 @@
 # Build in Docker container
-FROM golang:1.20.5-alpine as builder
+FROM golang:1-alpine as builder
 
-ENV CGO_ENABLED 0
+ENV CGO_ENABLED=0
 WORKDIR /src/s3sync
 COPY . ./
 RUN go mod vendor && \
